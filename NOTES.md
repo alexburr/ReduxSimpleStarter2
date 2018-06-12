@@ -44,3 +44,17 @@ Connecting React and Redux is done with a library called _`ReactRedux`_. It allo
 > A `Container` is a React component that has a _direct connection to the state_ managed by Redux.
 
 But... which components are promoted to Containers, and which are left as regular React Components?
+
+#### Lesson 41
+
+In general, we want the _first parent component_ that cares about a piece of state to be a Container. So our book list and book detail should be Containers ("smart" component) while our `app` should be a "dumb" component (no connection to a piece of state).
+
+#### Lesson 42
+
+We wrote a function called `mapStateToProps()`. Whatever it returns will show up as `this.props` on the container. The application `state` is passed in. `state` has two props, `books` and `activeBook`. We want to assign `books` from the app `state` to the `books` prop in the `book-list` component.
+
+> ### ReactRedux:
+> Whenever we make a Container file, we want to export the container:  
+> `export default connect(mapStateToProps)({{Component}})`
+
+Note that there are two sets of parentheses on the `connect` call; it is two separate calls.
