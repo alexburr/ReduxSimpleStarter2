@@ -2,6 +2,8 @@
 
 ## Section 4: Putting Redux to Practice
 
+#### Lesson 39
+
 ### Reducers
 
 > A Reducer is a _function_ that returns a piece of the application sate.
@@ -32,3 +34,13 @@ In this example there is a _Books_ Reducer and an _ActiveBook_ Reducer, each pro
 
 We did step 1 in `src/reducers/reducer_books` and step 2 in `src/reducers/index.js` by modifying `rootReducer` (this will be explored later). Note that we did not name the component in the file, and instead did `export default` so the consuming file (`index`) could name the component as it pleases.
 
+#### Lesson 40
+
+When we pass the object to `combineReducers` we tell Redux how to create our application state. At the early point, our app has a single piece of state called `books` where the value is whatever is returned from the `BooksReducer` function.
+
+Connecting React and Redux is done with a library called _`ReactRedux`_. It allows us to define a component as a `Container` instead of a `Component`. 
+
+> ### ReactRedux:
+> A `Container` is a React component that has a _direct connection to the state_ managed by Redux.
+
+But... which components are promoted to Containers, and which are left as regular React Components?
