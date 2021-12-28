@@ -6,11 +6,11 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    loaders: [
+    rules: [
       {
         exclude: /node_modules/,
         loader: 'babel',
-        query: {
+        options: {
           presets: ['react', 'es2015', 'stage-1']
         }
       }
